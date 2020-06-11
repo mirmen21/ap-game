@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class paintingLie : MonoBehaviour
 {
-    private string tagName = "Candy";
+    private string tagName = "Light";
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == tagName)
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("GameOver");
         }
     }
